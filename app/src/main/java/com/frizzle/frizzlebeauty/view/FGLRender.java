@@ -72,6 +72,7 @@ public class FGLRender implements GLSurfaceView.Renderer, SurfaceTexture.OnFrame
         int id = mCameraFilter.onDrawFrame(mTextures[0]);
         //..责任链模式可以在这加各种滤镜,最终交给mScreenFilter去做显示(运用到SurfaceView中)
         mScreenFilter.onDrawFrame(id);
+
     }
 
     @Override

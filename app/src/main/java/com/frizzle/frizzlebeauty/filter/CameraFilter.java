@@ -26,14 +26,20 @@ public class CameraFilter extends AbstractFilter {
     protected void initCoordinate() {
         //坐标转换
         mTexttureBuffer.clear();
+        //正常的坐标系四个顶点的坐标
+//        float[] TEXTURE={
+//                0.0f,0.0f,
+//                1.0f,0.0f,
+//                0.0f,1.0f,
+//                1.0f,1.0f
+//        };
         //由于摄像头采集的数据是颠倒的,需要先旋转90°,再做镜像处理
         float[] TEXTURE={
-                0.0f,0.0f,
-                1.0f,0.0f,
-                0.0f,1.0f,
-                1.0f,1.0f
+                0.0f, 1.0f,// 右上
+                0.0f, 0.0f,// 左上
+                1.0f, 1.0f,//右下
+                1.0f, 0.0f// 左下
         };
-
         mTexttureBuffer.put(TEXTURE);
 
     }
